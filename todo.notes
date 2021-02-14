@@ -4,3 +4,14 @@ eyJhbGciOiJSUzI1NiIsImtpZCI6Im9WUW1PYTV3Y2ZKMG45M1RKQk5KWW95aVRJM3JtcHAtYzF2TFo5
 
 kubectl --insecure-skip-tls-verify --kubeconfig="" --server=https://9a053e56-9daf-4523-b3e3-4756ba3a63e1.k8s.ondigitalocean.com --token=eyJhbGciOiJSUzI1NiIsImtpZCI6Im9WUW1PYTV3Y2ZKMG45M1RKQk5KWW95aVRJM3JtcHAtYzF2TFo5aGdNWjgifQ.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6ImNpY2QtdG9rZW4tN2pmbTgiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC5uYW1lIjoiY2ljZCIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50LnVpZCI6IjU3MDdiYmM1LTA3NjQtNGY2Ni04NmI5LWYzZDJhNzk3YWM3NiIsInN1YiI6InN5c3RlbTpzZXJ2aWNlYWNjb3VudDpkZWZhdWx0OmNpY2QifQ.WDc6haBTF6Woyu95jhxnTD72ESZNjaCcFcPKCY8ywkbl3Qg_zzkVKxCu8KfmC8T6X94yHA1501RhIxtjbeyCIRO0g6RZfkqzmPz7vvPMcvcSKduoTo-_qh5CDraIlYDyiZQZM0IPWX2VqTUT93skZW7aHN5dxj4piFisfYj7BVmbraOGHM1ViEmklbhLUUfU9gGHZs2xsC01p126lsJWyAiLu6qWsEVbj5X1YTT_DGz6UvfVZJNZA2Hh8bH9C9xaM4an478tOGPNql6U7LCbqz9OjlOrOxII-Cmo40mzhxxZxFvgIwMEg1eI7wfiEgLsgGBHQc2KcKTT-dhPQEoPlg get pods
     
+external ip - http://104.248.16.15:30000/
+10.245.175.108
+kubectl exec --stdin --tty pool-u20nw2jot-8341v/10.114.0.7 -- /bin/bash
+kubectl exec --stdin --tty jenkins-545f645f4d-cnckp -- /bin/bash
+
+kubectl exec -it jenkins-795fdf4d4-mwcvb -- sh
+kubectl exec -it do-kubernetes-sample-app-65bfd88946-2gf55 -- sh
+
+        sh "curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.20.2/bin/linux/amd64/kubectl"
+        sh "install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl"
+        sh "kubectl version --client"
