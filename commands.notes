@@ -1,0 +1,21 @@
+Kubernetes:
+## deployment                  - starts your application in a container
+## service-ClusterIP           - exposes deployment in the cluster at specified port
+## service-LoadBalancer        - exposes public accessible IP
+## kind: Ingress               - expose deployment to specified hosts (accessible via browser)
+
+
+## kubectl exec it podname -- sh -- enters the pod as ssh
+## kubectl delete -f file.yml    -- deletes the stateful configuratin object
+
+
+Docker build and publish:
+    docker build . -t iliyahanev/do-kubernetes-sample-app
+    docker push iliyahanev/do-kubernetes-sample-app
+    kubectl rollout restart deployment do-kubernetes-sample-app -n default
+
+
+Kubectl client installation:
+sh "curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.20.2/bin/linux/amd64/kubectl"
+sh "install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl"
+sh "kubectl version --client"
