@@ -2,10 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: webapp
-  labels:
-    app: webapp
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: webapp
@@ -15,9 +13,23 @@ spec:
         app: webapp
     spec:
       containers:
-        - name: webapp
-          image: iliyahanev/webapp:latest
-          imagePullPolicy: Always
-          ports:
-            - containerPort: 8080
-              name: http
+      - name: webapp
+        image: iliyahanev/webapp:latest
+        ports:
+        - containerPort: 80
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: webapp
+spec:
+  type: ClusterIP
+  ports:
+  - port: 80
+    targetPort: 80
+  selector:
+    app: webapp
+
+
